@@ -1,5 +1,5 @@
 
 # roadmap _ of the lecture: 
 
-[img](../img/roadmap_text.jpeg)
+![img](../img/roadmap_text.jpeg)
 
