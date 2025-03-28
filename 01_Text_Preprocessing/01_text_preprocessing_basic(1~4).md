@@ -144,6 +144,14 @@ NLP is a set of steps followed to build an end to end NLP software.
 ![img](../img/basic_text.jpeg)
 <br>
 
+### **Why tokenization is important?**
+$20 এখানে, $ আর 20  আলাদা আলাদা হতে হবে ।  <br>
+10KM এখানে, 10 and KM আলাদা আলাদা হতে হবে ।  <br>
+New-Work এখানে, 'New-Work'একসাথে, New Delhi, "New Delhi" একসাথে থাকবে । <br>
+
+**কেন tokenization important?**
+আমরা উপরে যে, example গুলো দেখলাম । আমরা যখন একটা chatbot বা nlp related কোন কাজ করবো তখন আমাদের programmer এর knowledge এ থাকতে হবে যে, উপরের word গুলো এইভাবেই করতে হবে । না হলে, আমার chatbot ভালো কাজ করবে না । user কি প্রশ্ন করছে? বা কোন কিছুর উত্তর চাইছে । বা, আমরা যখন model train করবো তখন আমাদের তো resource এর একটা limitation থাকবে  । ভালো gpu থাকবে না, আমরা যদি নিজেদের ইচ্ছা মতো token number বাড়ায় তাহলে তো আমাদের resouce নিয়ে ঝামেলা হবে । তাই, tokenization সময় duplicated words, lemmitation এর word এর ভিন্ন ভিন্ন form like in english we have, preasent,past,futeure, gerund etc. তাই, tokenization হলো একটা গুরুত্বপূর্ণ part NLP application এর জন্য । 
+
 ### **Sub-Word Tokenization: Used in LLM's:**
 
 `আমাদের কাছে যে input sentence গুলো থাকবে সেইগুলোকে ভাগ করা । যদি আমাদের কাছে ৪টা থাকে আর যদি আমরা একে ২ টা sentence এ merge করি তখন সেইটা আমরা Sentence Tokenization বলি । আর যদি আমরা word গুলো অনুযাইয়ী ভাগ করি তখন সেইটাকে আমরা Word Tokenization বলি। তেমন ভাবেঃ sub-word(নিচের example), character tokenization হতে পারে । আমরা আমাদের নিজেদের মতো, Tokenization technique Define করতে পারি ।  `
