@@ -16,14 +16,19 @@ Natural language processing is a subfield of linguistics,computer science and ar
 
 <br>
 
+`NLP, Natural Language Processing, Natural Language হলো মানুষ কীভাবে কথা বলে, কীভাবে ভাবের আদান-প্রদান করে । Natural Language processing হলো linguistics, AI and Comupter Science এর part যেইটা মানুষের সাথে computer কীভাবে natural language মাধ্যমে operate করা যায় সেইটা নিয়ে কাজ করে ।`
+
+<br>
+
 # `#02 Real World Applicaitons:`
 
 <br>
-- Contextual Advertisements
-- Email Clients - spam filtering,smart reply
-- Social Media - removing adult content, opinion mining
-- Search Engines
-- Chatbots
+
+- Contextual Advertisements <br>
+- Email Clients - spam filtering,smart reply <br>
+- Social Media - removing adult content, opinion mining <br>
+- Search Engines <br>
+- Chatbots 
 
 
 <br>
