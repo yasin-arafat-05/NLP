@@ -5,7 +5,8 @@
 - Common NLP Tasks
 - Approaches in NLP
 - NLP Pipeline 
-- 
+- Text Preparation
+
 <br>
 
 # `#01 What is NLP:`
@@ -130,17 +131,76 @@ NLP is a set of steps followed to build an end to end NLP software.
 <br>
 
 # `#06 Text Preparation:`
-
 <br>
 
 
 ![img](../img/roadmap_text.jpeg)
 ![img](../img/cleaning.jpeg)
 ![img](../img/basic_text.jpeg)
+<br>
+
+### **Sub-Word Tokenization: Used in LLM's:**
+
+`আমাদের কাছে যে input sentence গুলো থাকবে সেইগুলোকে ভাগ করা । যদি আমাদের কাছে ৪টা থাকে আর যদি আমরা একে ২ টা sentence এ merge করি তখন সেইটা আমরা Sentence Tokenization বলি । আর যদি আমরা word গুলো অনুযাইয়ী ভাগ করি তখন সেইটাকে আমরা Word Tokenization বলি। তেমন ভাবেঃ sub-word(নিচের example), character tokenization হতে পারে । আমরা আমাদের নিজেদের মতো, Tokenization technique Define করতে পারি ।  `
+
+**For example:** `the word "unbelievable" might be broken down into the sub-words "un," "believe," and "able." This helps the model process a larger vocabulary of words.`<br><br>
+
+`শুরুতে, openAi যখন, character based Tokenization Technique ব্যবহার করেছে, তখন তাদের Corpus এ unique word সংখ্যা অনেক গুলো হয়েছে । এত গুলো word এর Embedding বের করা সহজ ছিল না । এছাড়া যদি এমন কোন word যেইটা openAi এর traning সময় আসেনি কিন্তু, model এর inference এর সময়ে এসেছে তখন সেইটা OOV(out of Vocuvulary) error দিবে । এজন্য openAi তাঁদের sub-word tokenization technique ব্যবহার করেছে । "university" -> "uni" and "versity." এইভাবে sub-word tokenization ব্যবহার করার ফলে কোন এক সময়ে "uni" "versity" traning এর সময় embedding তৈরি হওয়ার সম্ভবনা অনেক বেশি থাকে ।   `
+
+`Some of the popular subword tokenization algorithms are **WordPiece, Byte-Pair Encoding (BPE), Unigram, and SentencePiece.** .BPE is used in language models like GPT-2, RoBERTa, XLM, FlauBERT, etc. A few of these models use space tokenization as the pre-tokenization method while a few use more advanced pre-tokenization methods provided by Moses, spaCY, ftfy.` <br>
+
+- `Sub-word Tokenization Tenique এর মধ্যে OpenAi -> BPE(Byte-Pair Encoding) অন্যদিকে google Sentence Piece ব্যবহার করে । `
+
+`** BPE Sub-Word Tokenization এর মধ্যে  পড়লেও । এখানে, word কে subword এ ভাগ না করে openAI, এই Sub-Word Tokenization কে  একটু modify করেছে ।  but, ultemitely, Tokenization এর কোন নিয়ম নেই । একটা, company কীভাবে তার word কে tokenization করবে সেইটা তার উপর নির্ভর করে । **`
+
+<br>
+
+## `**Byte-Pair Encoding (BPE)**` <br>
+
+BPE is a simple form of data compression algorithm in which the most common pair of consecutive bytes of data is replaced with a byte that does not occur in that data. It was first described in the article “A New Algorithm for Data Compression” published in 1994. The below example will explain BPE and has been taken from Wikipedia.<br>
+
+`Suppose we have data aaabdaaabac which needs to be encoded (compressed). The byte pair aa occurs most often, so we will replace it with Z as Z does not occur in our data. So we now have ZabdZabac where Z = aa. The next common byte pair is ab so let’s replace it with Y. We now have ZYdZYac where Z = aa and Y = ab. The only byte pair left is ac which appears as just one so we will not encode it. We can use recursive byte pair encoding to encode ZY as X. Our data has now transformed into XdXac where X = ZY, Y = ab, and Z = aa. It cannot be further compressed as there are no byte pairs appearing more than once. We decompress the data by performing replacements in reverse order.` <br>
+
+
+### `Another Example: `
+**Imagine you have a text document containing the following sentences:**<br>
+
+"The quick brown fox jumps over the lazy dog."<br>
+
+**You want to compress this text using BPE.** <br>
+
+- Identify Repeated Byte Pairs:<br>
+Look for repeated pairs of characters in the text. In our example, let's say the most common repeated pair is "th".<br>
+
+- Replace Repeated Byte Pairs:<br>
+Replace the most common repeated pair with a new symbol that doesn't exist in the text. Let's use `"$" for "th"`. So, our compressed text becomes:<br>
+
+"The quick brown fox jumps over $e lazy dog."<br>
+
+- Repeat the Process:<br>
+Continue identifying and replacing repeated pairs of characters in the compressed text. Let's say the next most common pair is `"er"`. Replace it with another new symbol, let's use `"#" for "er"`. So, our compressed text becomes:<br>
+
+"The quick brown fox jumps ov# $e lazy dog."<br>
+
+- Repeat Until No More Replacements Can Be Made:
+Keep repeating the process until no more repeated pairs of characters can be found. In our example, there are no more repeated pairs.<br>
+
+- **Decompression:** <br>
+To decompress the text, reverse the replacements. Replace the symbols with their corresponding original pairs of characters. For example, replace "$" with "th" and "#" with "er". So, our decompressed text becomes:<br>
+
+"The quick brown fox jumps over the lazy dog."<br><br>
+
+A variant of this is used in NLP. Let us understand the NLP version of it together. 🤗<br>
+
+BPE ensures that the most common words are represented in the vocabulary as a single token while the rare words are broken down into two or more subword tokens and this is in agreement with what a subword-based tokenization algorithm does.
+
+<br>
+
 ![img](../img/optional_text_01.jpeg)
 ![img](../img/optional_text_02.jpeg)
 
 <br>
+
 
 
 
