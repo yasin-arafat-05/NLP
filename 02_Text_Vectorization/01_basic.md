@@ -1,8 +1,43 @@
 
-# Self Attention: Part-01 (This is my lecture no:72 in Deep Learning Github Repo)
+# `#01 Common Terms:`
+- Corpus
+- Vocabulary
+- Document
+- Word
+
+### **Key NLP Terms Explained in Simple English**  
+
+#### **1. Corpus**  
+- **Definition:** A large, structured collection of **text data** (books, articles, conversations, etc.) used for linguistic analysis or training NLP models.  
+- **Example:**  
+  - *Bengali Corpus:* "Bangladeshi Constitution, newspaper articles, poems."  
+  - *English Corpus:* "Wikipedia pages, Twitter tweets."  
+
+#### **2. Vocabulary**  
+- **Definition:** The set of **all unique words** present in a corpus or dataset.  
+- **Example:**  
+  - Sentence: *"I love NLP, do you love it too?"*  
+  - Vocabulary: `{"I", "love", "NLP", "do", "you", "it", "too"}`.  
+
+#### **3. Document**  
+- **Definition:** A **single text unit** within a corpus (e.g., a sentence, paragraph, or full article).  
+- **Example:**  
+  - *"The quick brown fox jumps."* (1 document).  
+
+#### **4. Word**  
+- **Definition:** Words in a document.
+
+
+<br>
+<br>
+
+# `#02 Self Attention: Part-01 (This is my lecture no:72 in DL Github Repo):`
+
+<br>
+<br>
+
 
 ` যে কোন NLP Task Complete করার জন্য জন্য সবচেয়ে গুরুত্বপূর্ণ কাজ কি ?  `
-
 - Ans হচ্ছেঃ Word কে Number এ convert করা । শুরুতে, `OHE` এর পর  `Bag of words, Bag of N-gram`  এই সব গুলো `(ml based)` এগুলো আসার পরে, `Word to vec (dl based)` আসে ।  । নিচের নোট গুলোর ছবি দেওয়া আছে রিভিশন করে নাও । 
 
 <br>
